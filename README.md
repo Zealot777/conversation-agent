@@ -1,9 +1,9 @@
 Conversation Agent
 
 LangGraph를 이용하여 구현한 일본어 회화 에이전트입니다.
-
 본 프로젝트는 회화 생성, ​문법 피드백, ​웹 검색의 역할을 분리하여 LangGraph의 노드와 Conditional Edge를 활용하는 것을 목표로 제작되었습니다.
 
+❗❗❗반드시 일본어로 문장을 작성해주세요!❗❗❗
 실행 방법
 환경 변수 설정
 OPENAI_API_KEY=YOUR_API_KEY
