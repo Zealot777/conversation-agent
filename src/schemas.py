@@ -6,7 +6,11 @@ class ConversationOutput(BaseModel):
     
     feedback: str | None = Field(
         default=None,
-        description="Grammar or vocabulary feedback. Null if unnecessary."
+        description=(
+        "Feedback written ONLY in Korean. "
+        "Never English. Never Japanese except short examples."
+        )
+        
     )
 
     need_web_search: bool = Field(
