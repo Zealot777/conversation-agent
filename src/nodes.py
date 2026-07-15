@@ -1,7 +1,7 @@
 #nodes.py
 from langchain_openai import ChatOpenAI
 from .tools import search_tool
-from .prompts import CONVERSATION_PROMPT, RESPONSE_PROMPT
+from .prompts import CONVERSATION_PROMPT, NORMAL_RESPONSE_PROMPT, UNUSUAL_RESPONSE_PROMPT
 from .schemas import ConversationOutput, ResponseOutput
 from .state import AgentState
 
@@ -35,6 +35,8 @@ def conversation_node(state: AgentState) -> dict:
         "feedback": result.feedback,
         "need_web_search": result.need_web_search,
         "search_query": result.search_query,
+        "feedback_types": result.feedback_types,
+        "response_mode": result.response_mode,
     }
 
 
@@ -69,9 +71,13 @@ def response_node(state: AgentState) -> dict:
     Search Result:
     {state.get("search_result")}
     """
+    if state["response_mode"] == "normal":
+        prompt = NORMAL_RESPONSE_PROMPT
+    else:
+        prompt = UNUSUAL_RESPONSE_PROMPT
     raw = response_llm.invoke(
         [
-            ("system", RESPONSE_PROMPT),
+            ("system", prompt),
             ("human", human_message),
         ]
     )

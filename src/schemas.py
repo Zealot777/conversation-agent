@@ -1,6 +1,6 @@
 #src/schemas.py
 from pydantic import BaseModel, Field
-
+from typing import Literal
 
 class ConversationOutput(BaseModel):
     
@@ -12,7 +12,8 @@ class ConversationOutput(BaseModel):
         )
         
     )
-
+    response_mode: Literal["normal", "unusual"]
+    
     need_web_search: bool = Field(
         description="Whether external information is required."
     )
@@ -20,6 +21,9 @@ class ConversationOutput(BaseModel):
     search_query: str | None = Field(
         default=None,
         description="Search query when web search is required."
+    )
+    feedback_types: list[str] = Field(
+        description="Type of feedback, if there's no feedback then return []."
     )
     
 class ResponseOutput(BaseModel):
