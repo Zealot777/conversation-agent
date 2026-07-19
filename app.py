@@ -12,20 +12,21 @@ st.markdown("""
 <style>
 .st-emotion-cache-128upt6{
     
-    background: #faf8f2;
+    background: #FBEFEF;
 }
 /* 전체 배경 */
 .stApp{
-    background-color:#faf8f2;
+    background-color:#FBEFEF;
 }
 .stAppHeader {
-    background: #faf8f2;
+    background: #FBEFEF;
 }
 
 .stAppBottom {
-    background: #faf8f2;
+    background: #FBEFEF;
 }
-.stA
+
+.stChat
 /* 제목 */
 .main-title{
     
@@ -38,7 +39,6 @@ st.markdown("""
 
 /* 설명 박스 */
 .intro-box{
-    background:#fffaf3;
     border-left:8px solid #c0392b;
     border-radius:12px;
     padding:18px;
@@ -58,6 +58,21 @@ st.markdown("""
     color:#222;
     line-height:1.8;
 }
+/* 채팅 박스*/
+.st-emotion-cache-6mn6c9{
+    background-color: #FFE2E2;
+}
+/* 사이드바 영역*/
+.st-emotion-cache-1kss9tm{
+        background-color: #FFE2E2;
+}
+.st-emotion-cache-su9zec{
+    background-color:#f5cbcb;
+    
+}
+.st-emotion-cache-1fee4w7{
+    background-color: #f4e8ff;
+}
 
 /* 피드백 박스 */
 div[data-testid="stInfo"]{
@@ -67,25 +82,19 @@ div[data-testid="stInfo"]{
 /* 채팅 입력창 */
 div[data-testid="stChatInput"]{
     
-    background: #faf8f2;
+    background: #FBEFEF;
     border-top:2px solid #c0392b;
     padding-top:12px;
 }
 section[data-testid="stMain"]{
-    background:#faf8f2;
+    background:#FBEFEF;
 }
 div[data-testid="stBottomBlockContainer"]{
-    background:#faf8f2 !important;
+    background:#FBEFEF !important;
 }
 
 div[data-testid="stBottom"]{
-    background:#faf8f2 !important;
-}
-div[data-testid="stVerticalBlock"]{
-    background:#faf8f2;
-}
-.block-container {
-    background-color: #faf8f2;
+    background:#FBEFEF !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -99,9 +108,9 @@ st.title("일본어로 말해봐요!")
 
 st.markdown(
     """
-일본어로 자유롭게 대화해 보세요.
+일본어로 자유롭게 대화해 보세요!
 
-- 자연스럽게 대화를 이어갑니다.
+- 여러분이 어떤 이상한 말을 하더라도 자연스럽게 대화를 이어갑니다.
 - 문법 / 어휘 / 한자 / 경어(Register)를 한국어로 피드백합니다.
 - 최신 정보가 필요한 질문은 자동으로 검색합니다.
 """

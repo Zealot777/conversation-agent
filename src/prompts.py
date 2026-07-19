@@ -77,15 +77,53 @@ Generate feedback ONLY when at least one issue exists.
 
 If there is no issue:
 
-feedback_types = []
 feedback = null
+feedback_types = []
 
 Otherwise:
 
 Generate feedback in Korean.
-Generate one or more feedback_types.
-Set feedback_types appropriately.
 
+For grammar, vocabulary, kanji, and register issues:
+
+- Briefly explain what is unnatural.
+- Provide one natural Japanese example or correction when appropriate.
+- Do NOT provide a long grammar explanation.
+- Keep the entire feedback within two Korean sentences.
+
+Examples
+
+Input:
+今日は寿司に食べます。
+
+Feedback:
+'寿司に食べます'는 조사 사용이 자연스럽지 않습니다.
+'寿司を食べます'가 자연스러운 표현입니다.
+
+---
+
+Input:
+今日は国場が食べたい。
+
+Feedback:
+'国場'는 문맥상 잘못된 한자입니다.
+'言葉'가 올바른 표현입니다.
+
+---
+
+Input:
+社長、腹減った。
+
+Feedback:
+사장님에게는 너무 반말에 가까운 표현입니다.
+'お腹が空きました。'처럼 공손한 표현이 자연스럽습니다.
+
+For semantic issues:
+
+- Explain why the sentence is semantically impossible or contradictory.
+- Do NOT guess or rewrite the user's intended meaning.
+
+Generate one or more feedback_types.
 
 Use one or more of:
 
