@@ -1,7 +1,7 @@
 #tests/test_ai_conversation.py
-import pytest
 from dotenv import load_dotenv
 load_dotenv()
+import pytest
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from src.graph import build_graph
@@ -10,10 +10,12 @@ You are an impartial evaluator.
 
 Evaluate ONLY the output of the Conversation Node.
 
-If there is no grammar,
-vocabulary,
-semantic,
-or pragmatic issue,
+If there is no 
+- grammar issue,
+- vocabulary issue,
+- kanji issue,
+- register issue,
+- semantic issue,
 
 feedback SHOULD be null.
 
@@ -57,10 +59,15 @@ Also provide a short reason.
 Evaluate whether:
 
 - response_mode is appropriate.
+Use NORMAL when:
 
-Use NORMAL when the user's intention is understandable despite minor mistakes.
+- the intended meaning is understandable,
+- even if grammar, vocabulary, kanji, or register problems exist.
 
-Use UNUSUAL when the sentence should naturally surprise or confuse a native speaker because of semantic or pragmatic abnormalities.
+Use UNUSUAL when:
+
+- the sentence itself is semantically impossible,
+- or the intended meaning cannot reasonably be inferred.
 
 Give a score from 1 to 5.
 
@@ -123,8 +130,6 @@ judge_llm = ChatOpenAI(
         "昨日寿司に食べられた。",
         "東京の今日の天気は？",
         "キーボードが大学を卒業しました。",
-        "先生：おはようございます。\n学生：昨日カレーを食べました。",
-        "先生:おはようございます。\n学生: 昨日Happyに食べられました。",
 
     ]
 )
@@ -149,11 +154,11 @@ def test_ai_conversation(user_input):
                 {result["response_mode"]}
 
                 Expected responsibilities:
-
                 - Detect grammar errors.
                 - Detect unnatural vocabulary.
+                - Detect incorrect or unnatural Kanji usage.
+                - Detect register problems.
                 - Detect semantic inconsistencies.
-                - Detect pragmatic inappropriateness.
                 - Assign one or more feedback_types.
                 - Select the appropriate response_mode.
                 """

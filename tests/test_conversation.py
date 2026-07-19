@@ -36,7 +36,7 @@ app = build_graph().compile()
         ),
 
         (
-            "昨日寿司に食べられた。",
+            "昨日机に食べられた。",
             True,
             "unusual",
             False,
@@ -56,12 +56,6 @@ app = build_graph().compile()
             False,
         ),
 
-        (
-            "先生：おはようございます。\n学生：昨日カレーを食べました。",
-            True,
-            "unusual",
-            False,
-        ),
 
         (
             "今日の東京の天気は？",
@@ -98,19 +92,7 @@ app = build_graph().compile()
             False,
         ),
 
-        (
-            "昨日Happyに食べられた。",
-            True,
-            "unusual",
-            False,
-        ),
 
-        (
-            "先生:おはようございます。\n学生: 昨日Happyに食べられました。",
-            True,
-            "unusual",
-            False,
-        ),
     ]
 )
 

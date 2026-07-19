@@ -14,4 +14,5 @@ class AgentState(TypedDict):
     search_query: Optional[str]
     search_result: Optional[str]
     messages: Annotated[list[BaseMessage], add_messages]
-
+    is_valid_input: bool
+    error_message : Optional[str]
