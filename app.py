@@ -11,10 +11,20 @@ st.set_page_config(
 st.markdown("""
 <style>
 /* 전체 배경 */
-
-
+.st-emotion-cache-1r4qj8v{
+    background:#FBEFEF; 
+}
+.st-emotion-cache-1up3yna{
+    background:#FBEFEF;
+}
+.st-emotion-cache-16hesyz{
+    background: #c5b3d3;
+}
+.st-emotion-cache-128upt6{
+    background:#FBEFEF;
+}
 .stAppBottom {
-    background: #FBEFEF;
+    background: #F5CBCB;
 }
 
 /* 제목 */
