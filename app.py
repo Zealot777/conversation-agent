@@ -10,23 +10,13 @@ st.set_page_config(
 )
 st.markdown("""
 <style>
-.st-emotion-cache-128upt6{
-    
-    background: #FBEFEF;
-}
 /* 전체 배경 */
-.stApp{
-    background-color:#FBEFEF;
-}
-.stAppHeader {
-    background: #FBEFEF;
-}
+
 
 .stAppBottom {
     background: #FBEFEF;
 }
 
-.stChat
 /* 제목 */
 .main-title{
     
@@ -68,12 +58,10 @@ st.markdown("""
 }
 .st-emotion-cache-su9zec{
     background-color:#f5cbcb;
-    
 }
 .st-emotion-cache-1fee4w7{
     background-color: #f4e8ff;
 }
-
 /* 피드백 박스 */
 div[data-testid="stInfo"]{
     font-size:17px;
@@ -82,19 +70,24 @@ div[data-testid="stInfo"]{
 /* 채팅 입력창 */
 div[data-testid="stChatInput"]{
     
-    background: #FBEFEF;
     border-top:2px solid #c0392b;
     padding-top:12px;
-}
-section[data-testid="stMain"]{
-    background:#FBEFEF;
-}
-div[data-testid="stBottomBlockContainer"]{
-    background:#FBEFEF !important;
 }
 
 div[data-testid="stBottom"]{
     background:#FBEFEF !important;
+}
+@media @media (prefers-color-scheme: dark) {
+  /* 다크 모드에 적용할 스타일 정의 */
+    .main-title{
+    
+    text-align:center;
+    color:#8B0000;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
 }
 </style>
 """, unsafe_allow_html=True)
@@ -178,6 +171,7 @@ for message in st.session_state.messages:
 
     with st.chat_message(message["role"]):
         st.write(message["content"])
+        
 
 # ----------------------------
 # Chat
